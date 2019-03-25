@@ -11,7 +11,7 @@ sample_metadata.html("");
     // Hint: Inside the loop, you will need to use d3 to append new
     // tags for each key-value in the metadata.
 Object.entries(sampleData)
-      .forEach([key, value] => {
+      .forEach(function([key, value]) {
         sample_metadata.append("h6")
         .text('${key, value}');
       })
@@ -70,7 +70,7 @@ function init() {
 
   // Use the list of sample names to populate the select options
   d3.json("/names").then((sampleNames) => {
-    sampleNames.forEach((sample) => {
+    sampleNames.forEach(function(sample) {
       selector
         .append("option")
         .text(sample)
